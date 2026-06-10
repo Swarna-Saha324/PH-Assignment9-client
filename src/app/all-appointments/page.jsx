@@ -23,7 +23,7 @@ export default function AllAppointmentsPage() {
 }, []);
 
   const handleViewDetails = (targetId) => {
-    // 🔗 ডিরেক্ট ডিটেইলস পেজে পাঠানো হচ্ছে, সেখানে Better-Auth লগইন চেক করবে
+    
     router.push(`/doctors/${targetId}`);
   };
 
