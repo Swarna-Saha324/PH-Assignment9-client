@@ -11,6 +11,10 @@ const nextConfig = {
         protocol: 'https',
         hostname: 'lh3.googleusercontent.com', // গুগল লগইন প্রোফাইল ছবির জন্য সেফ জোন
       },
+      {
+        protocol: 'https',
+        hostname: 'i.ibb.co.com', // 👈 ImgBB ইমেজ হোস্টনেম (নতুন যুক্ত করা হলো)
+      },
     ],
   },
   reactCompiler: true,
