@@ -15,6 +15,10 @@ const nextConfig = {
         protocol: 'https',
         hostname: 'i.ibb.co.com', // 👈 ImgBB ইমেজ হোস্টনেম (নতুন যুক্ত করা হলো)
       },
+      {
+        protocol: 'http',
+        hostname: 'googleusercontent.com',
+      },
     ],
   },
   reactCompiler: true,
