@@ -6,6 +6,9 @@ import { useRouter } from "next/navigation";
 import Link from "next/link";
 import { Mail, Lock, KeyRound, Loader2 } from "lucide-react";
 import { FcGoogle } from "react-icons/fc";
+import { toast } from "react-toastify";
+
+
 
 export default function SignInPage() {
   const router = useRouter();
@@ -22,7 +25,7 @@ export default function SignInPage() {
       });
     } catch (err) {
       console.error("Google authentication failed:", err);
-      alert("Google login session failed to initialize.");
+      toast.error("Google login session failed to initialize.");
     }
   };
 
@@ -147,7 +150,7 @@ export default function SignInPage() {
           <div className="text-center mt-6 border-t border-white/5 pt-4">
             <p className="text-xs text-slate-500">
               Don't have an account?{" "}
-              <Link href="/signup" className="font-bold text-blue-400 hover:text-blue-300 transition-colors">
+              <Link href="/register" className="font-bold text-blue-400 hover:text-blue-300 transition-colors">
                 Register
               </Link>
             </p>

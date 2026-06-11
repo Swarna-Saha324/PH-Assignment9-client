@@ -5,7 +5,7 @@ import { useParams, useRouter } from "next/navigation";
 import Image from "next/image";
 import { createAuthClient } from "better-auth/react"; 
 import { ArrowLeft, MapPin, DollarSign, Clock, Briefcase, Building, CheckCircle2, User, Phone, Shield } from "lucide-react";
-
+import { toast } from "react-toastify";
 const authClient = createAuthClient();
 
 export default function DoctorDetailsPage() {
@@ -59,7 +59,7 @@ export default function DoctorDetailsPage() {
   const handleBookingSubmit = async (e) => {
     e.preventDefault();
     if (!selectedSlot || !patientName || !patientPhone) {
-      alert("Please enter patient documentation fields and choose a time slot.");
+      toast("Please enter patient documentation fields and choose a time slot.");
       return;
     }
 
@@ -95,7 +95,7 @@ export default function DoctorDetailsPage() {
       }
     } catch (err) {
       console.error("Booking verification failed:", err);
-      alert("Something went wrong. Please check your network backend connection.");
+      toast.error("Something went wrong. Please check your network backend connection.");
     } finally {
       setBookingLoading(false);
     }

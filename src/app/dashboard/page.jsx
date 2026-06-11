@@ -38,7 +38,7 @@ export default function DashboardPage() {
   const [profileImage, setProfileImage] = useState("");
   const [profileUpdateLoading, setProfileUpdateLoading] = useState(false);
 
-  // 🔐 Route Protection & Appointments Loading
+  // Route Protection & Appointments Loading
   useEffect(() => {
     if (!authLoading && !session) {
       router.push("/register");
@@ -46,7 +46,7 @@ export default function DashboardPage() {
     }
 
     if (session?.user?.email) {
-      // আপনার নোড/এক্সপ্রেস ব্যাকএন্ড থেকে এই ইমেইলের অ্যাপয়েন্টমেন্টগুলো আনা হচ্ছে
+      
       fetch(`http://localhost:5000/appointments?email=${session.user.email}`)
         .then((res) => res.json())
         .then((data) => {
@@ -89,7 +89,7 @@ export default function DashboardPage() {
       });
 
       if (response.ok) {
-        // রিয়েল-টাইম UI আপডেট (No Reload)
+       
         setBookings(bookings.map(b => (b._id === currentBooking._id || b.id === currentBooking.id)
           ? { ...b, patientName, patientPhone, selectedSlot } : b
         ));

@@ -39,7 +39,7 @@ export default function SignUpPage() {
         email,
         password,
         name,
-        image: photoUrl // Better-Auth স্কিমার সাথে ম্যাচ করার জন্য 'image' পাস করা হয়েছে
+        image: photoUrl 
       });
 
       if (error) {
@@ -183,7 +183,7 @@ export default function SignUpPage() {
           <div className="text-center mt-6 border-t border-white/5 pt-4">
             <p className="text-xs text-slate-500">
               Already have an account?{" "}
-              <Link href="/signIn" className="font-bold text-blue-400 hover:text-blue-300 transition-colors">
+              <Link href="/login" className="font-bold text-blue-400 hover:text-blue-300 transition-colors">
                 Sign In
               </Link>
             </p>
