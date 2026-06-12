@@ -113,18 +113,17 @@ https://github.com/Swarna-Saha324/PH-Assignment9-server
 
 ## 📸 Laptop View
 
-![Laptop View 1](https://ibb.co.com/3QnFYT4))
+![Laptop View 1](/public/Screenshot 2026-06-13 014915.png)
 
-![Laptop View 2](https://ibb.co.com/HfpTNYp2)
+![Laptop View 2](/public/Screenshot 2026-06-13 015018.png)
 
 ## 📱 Mobile View
 
-![Mobile View 1](https://ibb.co.com/8nQk6bx3)
+![Mobile View 1](/public/1.jpeg)
 
-![Mobile View 2](https://ibb.co.com/YTPsBVjM)
+![Mobile View 2](/public/e1982cd6-8d48-439f-aef8-f4bddf5597c0.jpeg)
 
-![Mobile View 3](https://ibb.co.com/Q7ZmycvG)
-
+![Mobile View 3](/public/ed93b80c-2163-42c5-a7c7-b1388852b575.jpeg)
 ## 👨‍💻 Developer
 
 Developed by **Swarna Saha** as part of the Programming Hero Assignment.
