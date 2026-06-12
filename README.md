@@ -1,36 +1,118 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+# 🩺 DocAppoint - Doctor Appointment Management System
 
-## Getting Started
+🔗 **Live Site:** https://docappoint-client-red.vercel.app/
 
-First, run the development server:
+## 📖 Project Overview
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
+DocAppoint is a full-stack doctor appointment booking platform where users can browse doctors, view detailed information, book appointments, and manage their bookings through a secure authentication system.
+
+## 🚀 Features
+
+- View top-rated doctors on the homepage.
+- Browse all available doctors and appointment options.
+- Search doctors by name.
+- Book appointments and store data in MongoDB.
+- Update and delete booked appointments from the dashboard.
+- Secure authentication using Email/Password and Google Sign-In.
+- User profile management with real-time updates.
+- Protected routes using JWT authentication.
+- Fully responsive design for mobile, tablet, and desktop.
+- Custom 404 page and loading spinner implementation.
+
+## 🛠️ Technologies Used
+
+### Frontend
+- React.js
+- React Router
+- Tailwind CSS
+- DaisyUI
+- Axios
+- React Hot Toast
+- Swiper.js
+
+### Backend
+- Node.js
+- Express.js
+- MongoDB
+- JWT
+- CORS
+
+### Authentication
+- Firebase Authentication
+- Google Login
+
+## 📂 Pages
+
+### Home Page
+- Hero Banner
+- Top Rated Doctors
+- Additional Sections
+
+### All Appointments
+- View all doctors
+- Search functionality
+
+### Doctor Details
+- Doctor information
+- Appointment booking
+
+### Dashboard
+#### My Bookings
+- View bookings
+- Update bookings
+- Delete bookings
+
+#### My Profile
+- View profile
+- Update profile
+
+## 🔑 Environment Variables
+
+### Client
+
+```env
+VITE_API_URL=your_api_url
+VITE_FIREBASE_API_KEY=your_api_key
+VITE_FIREBASE_AUTH_DOMAIN=your_auth_domain
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+### Server
 
-You can start editing the page by modifying `app/page.js`. The page auto-updates as you edit the file.
+```env
+PORT=5000
+DB_USER=your_database_user
+DB_PASS=your_database_password
+JWT_SECRET=your_secret_key
+```
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+## ⚙️ Installation
 
-## Learn More
+### Client
 
-To learn more about Next.js, take a look at the following resources:
+```bash
+git clone https://github.com/Swarna-Saha324/PH-Assignment9-client.git
+cd PH-Assignment9-client
+npm install
+npm run dev
+```
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+### Server
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+```bash
+git clone https://github.com/Swarna-Saha324/PH-Assignment9-server.git
+cd PH-Assignment9-server
+npm install
+npm start
+```
 
-## Deploy on Vercel
+## 🔗 Repository Links
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+### Client Repository
+https://github.com/Swarna-Saha324/PH-Assignment9-client
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+### Server Repository
+https://github.com/Swarna-Saha324/PH-Assignment9-server
+
+## 👨‍💻 Developer
+
+Developed by **Swarna Saha** as part of the Programming Hero Assignment.
