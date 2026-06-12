@@ -1,17 +1,16 @@
-
 "use client";
 
 import React, { useState, useEffect } from "react";
 import { useRouter, usePathname } from "next/navigation";
 import Image from "next/image";
 import { authClient } from "@/app/lib/auth-client"; 
-import { ArrowLeft, MapPin, DollarSign, Clock, Briefcase, Building, CheckCircle2, User, Phone, Shield } from "lucide-react";
+// 🎯 Star আইকনটি এখানে যোগ করা হয়েছে
+import { ArrowLeft, MapPin, DollarSign, Clock, Briefcase, Building, CheckCircle2, User, Phone, Shield, Star } from "lucide-react";
 import { toast } from "react-toastify";
 
 export default function SingleDoctorClient({ id }) { 
   const router = useRouter();
   const pathname = usePathname();
-  
   
   const { data: session, isPending: authLoading } = authClient.useSession();
   
@@ -155,7 +154,13 @@ export default function SingleDoctorClient({ id }) {
                 <h1 className="text-3xl font-black text-transparent bg-clip-text bg-gradient-to-r from-white via-slate-200 to-slate-400 mt-2 leading-tight">
                   {doctor.name}
                 </h1>
-                <div className="flex flex-wrap gap-4 mt-2 text-sm text-slate-400 font-medium">
+                
+                {/* 🎯 ১. ডক্টর রেটিং সেকশন (অভিজ্ঞতা ও হাসপাতালের সাথে ম্যাট্রিক্স করা) */}
+                <div className="flex flex-wrap gap-4 mt-2 text-sm text-slate-400 font-medium items-center">
+                  <span className="flex items-center gap-1 bg-amber-500/10 text-amber-400 border border-amber-500/10 px-2 py-0.5 rounded-lg text-xs font-bold">
+                    <Star className="w-3.5 h-3.5 fill-amber-400 text-amber-400" /> 
+                    {doctor.rating ? doctor.rating.toFixed(1) : "4.5"}
+                  </span>
                   <span className="flex items-center gap-1"><Briefcase className="w-4 h-4 text-blue-400" /> {doctor.experience} Experience</span>
                   <span className="flex items-center gap-1"><Building className="w-4 h-4 text-blue-400" /> {doctor.hospital}</span>
                 </div>
@@ -236,7 +241,7 @@ export default function SingleDoctorClient({ id }) {
                     <div className="relative">
                       <Phone className="absolute left-3 top-3 w-4 h-4 text-slate-500" />
                       <input 
-                        type="tel" 
+                        type="text" 
                         required
                         value={patientPhone}
                         onChange={(e) => setPatientPhone(e.target.value)}
@@ -276,9 +281,19 @@ export default function SingleDoctorClient({ id }) {
                     </div>
                   </div>
 
-                  <div className="bg-[#0d193b]/60 p-4 rounded-xl flex justify-between items-center text-xs text-slate-400 border border-white/5">
-                    <span className="flex items-center gap-1"><Shield className="w-3.5 h-3.5 text-blue-400" /> Total Fee:</span>
-                    <span className="font-black text-emerald-400 text-sm">{doctor.fee} BDT</span>
+                  {/* 🎯 ২. মডালের ভেতরের ফি এবং রেটিং এর প্রিভিউ ইনফো গ্রিড */}
+                  <div className="grid grid-cols-2 gap-3 text-xs border border-white/5 bg-[#0d193b]/60 p-4 rounded-xl">
+                    <div className="flex flex-col gap-0.5">
+                      <span className="text-slate-500 uppercase font-bold text-[9px] tracking-wider">Doctor Rating</span>
+                      <span className="font-bold text-amber-400 flex items-center gap-1 text-sm">
+                        <Star className="w-3.5 h-3.5 fill-amber-400 text-amber-400" />
+                        {doctor.rating ? doctor.rating.toFixed(1) : "4.5"}
+                      </span>
+                    </div>
+                    <div className="flex flex-col gap-0.5 items-end">
+                      <span className="text-slate-500 uppercase font-bold text-[9px] tracking-wider">Total Consultation Fee</span>
+                      <span className="font-black text-emerald-400 text-sm">{doctor.fee} BDT</span>
+                    </div>
                   </div>
 
                   <button
