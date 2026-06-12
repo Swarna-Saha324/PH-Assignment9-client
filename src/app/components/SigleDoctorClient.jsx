@@ -4,7 +4,7 @@ import React, { useState, useEffect } from "react";
 import { useRouter, usePathname } from "next/navigation";
 import Image from "next/image";
 import { authClient } from "@/app/lib/auth-client"; 
-// 🎯 Star আইকনটি এখানে যোগ করা হয়েছে
+
 import { ArrowLeft, MapPin, DollarSign, Clock, Briefcase, Building, CheckCircle2, User, Phone, Shield, Star } from "lucide-react";
 import { toast } from "react-toastify";
 
@@ -155,7 +155,7 @@ export default function SingleDoctorClient({ id }) {
                   {doctor.name}
                 </h1>
                 
-                {/* 🎯 ১. ডক্টর রেটিং সেকশন (অভিজ্ঞতা ও হাসপাতালের সাথে ম্যাট্রিক্স করা) */}
+                
                 <div className="flex flex-wrap gap-4 mt-2 text-sm text-slate-400 font-medium items-center">
                   <span className="flex items-center gap-1 bg-amber-500/10 text-amber-400 border border-amber-500/10 px-2 py-0.5 rounded-lg text-xs font-bold">
                     <Star className="w-3.5 h-3.5 fill-amber-400 text-amber-400" /> 
@@ -281,7 +281,7 @@ export default function SingleDoctorClient({ id }) {
                     </div>
                   </div>
 
-                  {/* 🎯 ২. মডালের ভেতরের ফি এবং রেটিং এর প্রিভিউ ইনফো গ্রিড */}
+                
                   <div className="grid grid-cols-2 gap-3 text-xs border border-white/5 bg-[#0d193b]/60 p-4 rounded-xl">
                     <div className="flex flex-col gap-0.5">
                       <span className="text-slate-500 uppercase font-bold text-[9px] tracking-wider">Doctor Rating</span>

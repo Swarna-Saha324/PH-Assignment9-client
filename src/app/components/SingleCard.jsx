@@ -5,13 +5,13 @@ import Image from "next/image";
 import { Star, Briefcase, Building, ArrowRight } from "lucide-react";
 
 export default function SingleCard({ doc, onViewDetails }) {
-  // ডাটা ডিফেন্সিভলি হ্যান্ডেল করা (যাতে কোনো ফিল্ড মিসিং থাকলে ক্রাশ না করে)
+
   if (!doc) return null;
 
   return (
     <div className="bg-[#0a122c]/80 rounded-2xl border border-white/5 p-5 shadow-xl hover:border-blue-500/30 transition-all flex flex-col justify-between group relative overflow-hidden backdrop-blur-sm">
       <div>
-        {/* ডক্টরের ছবি */}
+       
         <div className="relative w-full h-48 rounded-xl overflow-hidden bg-[#0d193b] mb-4">
           <Image 
             src={doc.image || "https://images.unsplash.com/photo-1559839734-2b71ea197ec2"} 
@@ -20,14 +20,14 @@ export default function SingleCard({ doc, onViewDetails }) {
             unoptimized
             className="object-cover group-hover:scale-105 transition-transform duration-300"
           />
-          {/* রেটিং */}
+         
           <div className="absolute top-3 right-3 bg-amber-500/90 text-slate-900 font-black text-xs px-2.5 py-1 rounded-lg flex items-center gap-1 shadow-lg">
             <Star className="w-3.5 h-3.5 fill-slate-900 text-slate-900" />
             {doc.rating ? Number(doc.rating).toFixed(1) : "4.5"}
           </div>
         </div>
 
-        {/* ডক্টর ইনফরমেশন */}
+       
         <div className="space-y-2 text-left">
           <span className="text-[10px] bg-blue-500/10 text-blue-400 border border-blue-500/20 font-extrabold tracking-wide uppercase px-2.5 py-0.5 rounded-md">
             {doc.specialty || "General Specialist"}
@@ -47,7 +47,7 @@ export default function SingleCard({ doc, onViewDetails }) {
         </div>
       </div>
 
-      {/* ফি এবং বাটন */}
+      
       <div className="border-t border-white/5 mt-5 pt-4 flex items-center justify-between">
         <div className="text-left">
           <p className="text-[9px] text-slate-500 font-bold uppercase tracking-wider">Fee</p>
