@@ -113,17 +113,17 @@ https://github.com/Swarna-Saha324/PH-Assignment9-server
 
 ## 📸 Laptop View
 
-![Laptop View 1](https://i.ibb.co/xxxxx/image1.png)
+![Laptop View 1]([https://i.ibb.co/xxxxx/image1.png](https://ibb.co.com/3QnFYT4))
 
-![Laptop View 2](https://i.ibb.co/yyyyy/image2.png)
+![Laptop View 2](https://ibb.co.com/HfpTNYp2)
 
 ## 📱 Mobile View
 
-![Mobile View 1](https://i.ibb.co/zzzzz/image3.png)
+![Mobile View 1]([https://i.ibb.co/zzzzz/image3.png](https://ibb.co.com/8nQk6bx3))
 
-![Mobile View 2](https://i.ibb.co/aaaaa/image4.png)
+![Mobile View 2]([https://i.ibb.co/aaaaa/image4.png](https://ibb.co.com/YTPsBVjM))
 
-![Mobile View 3](https://i.ibb.co/bbbbb/image5.png)
+![Mobile View 3]([https://i.ibb.co/bbbbb/image5.png](https://ibb.co.com/Q7ZmycvG))
 
 ## 👨‍💻 Developer
 
