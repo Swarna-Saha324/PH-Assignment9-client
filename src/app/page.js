@@ -1,6 +1,7 @@
 
 import HeroBanner from "./components/HeroBanner";
 import TopDoctors from "./components/TopDoctors";
+import WhyChooseUs from "./components/WhyChooseUS";
 export default function Home() {
   return (
    <div>
@@ -8,6 +9,7 @@ export default function Home() {
       {/* 1. Hero Banner Component Injection */}
       <HeroBanner />
       <TopDoctors />
+      <WhyChooseUs></WhyChooseUs>
       
       {/* 2. Other sections layer placeholder */}
       <section className="max-w-7xl mx-auto px-4 py-16 text-center text-gray-400">
