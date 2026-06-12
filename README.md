@@ -1,6 +1,6 @@
 # 🩺 DocAppoint - Doctor Appointment Management System
 
-🔗 **Live Site:** https://docappoint-client-red.vercel.app/
+🔗 **Live Site:** https://docappoint-client-red.vercel.app
 
 ## 📖 Project Overview
 
@@ -25,8 +25,7 @@ DocAppoint is a full-stack doctor appointment booking platform where users can b
 - React.js
 - React Router
 - Tailwind CSS
-- DaisyUI
-- Axios
+- Hero UI
 - React Hot Toast
 - Swiper.js
 
@@ -38,7 +37,6 @@ DocAppoint is a full-stack doctor appointment booking platform where users can b
 - CORS
 
 ### Authentication
-- Firebase Authentication
 - Google Login
 
 ## 📂 Pages
@@ -112,6 +110,20 @@ https://github.com/Swarna-Saha324/PH-Assignment9-client
 
 ### Server Repository
 https://github.com/Swarna-Saha324/PH-Assignment9-server
+
+## 📸 Laptop View
+
+![Laptop View 1](https://i.ibb.co/xxxxx/image1.png)
+
+![Laptop View 2](https://i.ibb.co/yyyyy/image2.png)
+
+## 📱 Mobile View
+
+![Mobile View 1](https://i.ibb.co/zzzzz/image3.png)
+
+![Mobile View 2](https://i.ibb.co/aaaaa/image4.png)
+
+![Mobile View 3](https://i.ibb.co/bbbbb/image5.png)
 
 ## 👨‍💻 Developer
 
