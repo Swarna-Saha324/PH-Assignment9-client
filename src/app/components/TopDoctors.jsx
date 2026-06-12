@@ -13,7 +13,7 @@ export default function TopDoctors() {
   const [loading, setLoading] = useState(true);
 
   useEffect(() => {
-    fetch("http://localhost:5000/doctors")
+    fetch(`${process.env.NEXT_PUBLIC_SERVER_URL}/doctors`)
       .then((res) => {
         if (!res.ok) throw new Error("Failed to fetch doctors");
         return res.json();

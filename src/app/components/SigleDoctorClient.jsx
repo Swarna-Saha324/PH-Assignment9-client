@@ -28,7 +28,7 @@ export default function SingleDoctorClient({ id }) {
 
   useEffect(() => {
     if (!id) return;
-    fetch(`http://localhost:5000/doctors/${id}`)
+    fetch(`${process.env.NEXT_PUBLIC_SERVER_URL}/doctors/${id}`)
       .then((res) => {
         if (!res.ok) throw new Error("Doctor profiles indexing error");
         return res.json();
@@ -77,7 +77,7 @@ export default function SingleDoctorClient({ id }) {
     };
 
     try {
-      const response = await fetch("http://localhost:5000/appointments", {
+      const response = await fetch(`${process.env.NEXT_PUBLIC_SERVER_URL}/appointments`, {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify(appointmentPayload),

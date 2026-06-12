@@ -3,16 +3,16 @@
 import React, { useState, useEffect } from "react";
 import { useRouter } from "next/navigation";
 import DoctorCard from "../components/DoctorCard";
-import { Search } from "lucide-react"; // 👈 সার্চ আইকনের জন্য লিম্পোর্ট করা হয়েছে
+import { Search } from "lucide-react"; 
 
 export default function AllAppointmentsPage() {
   const [doctors, setDoctors] = useState([]);
   const [loading, setLoading] = useState(true);
-  const [searchQuery, setSearchQuery] = useState(""); // 👈 সার্চ কুয়েরি স্টেট
+  const [searchQuery, setSearchQuery] = useState("");
   const router = useRouter();
 
   useEffect(() => {
-    fetch("http://localhost:5000/doctors")
+    fetch(`${process.env.NEXT_PUBLIC_SERVER_URL}/doctors`)
       .then((res) => res.json())
       .then((data) => {
         setDoctors(data);
@@ -28,7 +28,7 @@ export default function AllAppointmentsPage() {
     router.push(`/doctors/${targetId}`);
   };
 
-  // 🔍 ডক্টরের নাম ধরে ফিল্টার করার লজিক (Case-insensitive)
+  
   const filteredDoctors = doctors.filter((doctor) =>
     doctor.name?.toLowerCase().includes(searchQuery.toLowerCase())
   );
@@ -43,7 +43,7 @@ export default function AllAppointmentsPage() {
 
   return (
     <div className="w-full bg-[#0d193b] min-h-screen py-12 font-sans text-white overflow-hidden relative">
-      {/* 🎨 ব্যাকগ্রাউন্ড গ্লোয়িং অ্যাম্বিয়েন্ট লাইট ইফেক্টস */}
+     
       <div className="absolute top-10 left-10 w-96 h-96 bg-blue-500/5 rounded-full blur-3xl -z-10 pointer-events-none"></div>
       <div className="absolute bottom-10 right-10 w-96 h-96 bg-indigo-500/5 rounded-full blur-3xl -z-10 pointer-events-none"></div>
 
@@ -60,7 +60,7 @@ export default function AllAppointmentsPage() {
           <div className="w-24 h-1 bg-gradient-to-r from-blue-500 to-indigo-500 mx-auto rounded-full mt-4 shadow-lg shadow-blue-500/50"></div>
         </div>
 
-        {/* 🔍 💻 প্রিমিয়াম ডার্ক মেটালিক সার্চ বার সেকশন */}
+        
         <div className="max-w-md mx-auto mb-14">
           <div className="relative group">
             <div className="absolute inset-y-0 left-0 pl-4 flex items-center pointer-events-none">
@@ -84,7 +84,7 @@ export default function AllAppointmentsPage() {
           </div>
         </div>
 
-        {/* 🚀 Super Clean Doctor Grid Layout with Real-time Filtering */}
+       
         {filteredDoctors.length === 0 ? (
           <div className="text-center py-20 bg-[#0a122c]/50 rounded-3xl border border-white/5">
             <p className="text-slate-400 font-medium">

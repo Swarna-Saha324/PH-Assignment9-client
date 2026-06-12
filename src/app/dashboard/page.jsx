@@ -47,7 +47,7 @@ export default function DashboardPage() {
 
     if (session?.user?.email) {
       
-      fetch(`http://localhost:5000/appointments?email=${session.user.email}`)
+      fetch(`${process.env.NEXT_PUBLIC_SERVER_URL}/appointments?email=${session.user.email}`)
         .then((res) => res.json())
         .then((data) => {
           setBookings(data);
@@ -82,7 +82,7 @@ export default function DashboardPage() {
     setBookingUpdateLoading(true);
 
     try {
-      const response = await fetch(`http://localhost:5000/appointments/${currentBooking._id || currentBooking.id}`, {
+      const response = await fetch(`${process.env.NEXT_PUBLIC_SERVER_URL}/appointments/${currentBooking._id || currentBooking.id}`, {
         method: "PUT",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({ patientName, patientPhone, selectedSlot }),
@@ -107,7 +107,7 @@ export default function DashboardPage() {
     if (!confirm("Are you sure you want to delete this appointment?")) return;
 
     try {
-      const response = await fetch(`http://localhost:5000/appointments/${id}`, { method: "DELETE" });
+      const response = await fetch(`${process.env.NEXT_PUBLIC_SERVER_URL}/appointments/${id}`, { method: "DELETE" });
       if (response.ok) {
         // সঙ্গে সঙ্গে ইন্টারফেস থেকে রিমুভ (No Reload)
         setBookings(bookings.filter(b => b._id !== id && b.id !== id));
