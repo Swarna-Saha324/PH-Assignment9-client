@@ -2,6 +2,7 @@
 import HeroBanner from "./components/HeroBanner";
 import TopDoctors from "./components/TopDoctors";
 import WhyChooseUs from "./components/WhyChooseUS";
+import StatsSection from "./components/StatsSection";
 export default function Home() {
   return (
    <div>
@@ -10,11 +11,10 @@ export default function Home() {
       <HeroBanner />
       <TopDoctors />
       <WhyChooseUs></WhyChooseUs>
+      <StatsSection></StatsSection>
       
       {/* 2. Other sections layer placeholder */}
-      <section className="max-w-7xl mx-auto px-4 py-16 text-center text-gray-400">
-        <p>Rest of the dynamic components will go here...</p>
-      </section>
+      
     </div>
    </div>
   );
