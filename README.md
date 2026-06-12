@@ -111,19 +111,22 @@ https://github.com/Swarna-Saha324/PH-Assignment9-client
 ### Server Repository
 https://github.com/Swarna-Saha324/PH-Assignment9-server
 
-## 📸 Laptop View
+## 📸 Project Screenshots
 
-![Laptop View 1](/public/Screenshot 2026-06-13 014915.png)
+### 💻 Laptop View
 
-![Laptop View 2](/public/Screenshot 2026-06-13 015018.png)
+<p align="center">
+  <img src="./public/Laptop1.png" width="48%" />
+  <img src="./public/Laptop2.png" width="48%" />
+</p>
 
-## 📱 Mobile View
+### 📱 Mobile View
 
-![Mobile View 1](/public/1.jpeg)
-
-![Mobile View 2](/public/e1982cd6-8d48-439f-aef8-f4bddf5597c0.jpeg)
-
-![Mobile View 3](/public/ed93b80c-2163-42c5-a7c7-b1388852b575.jpeg)
+<p align="center">
+  <img src="./public/1.jpeg" width="32%" />
+  <img src="./public/e1982cd6-8d48-439f-aef8-f4bddf5597c0.jpeg" width="32%" />
+  <img src="./public/ed93b80c-2163-42c5-a7c7-b1388852b575.jpeg" width="32%" />
+</p>
 ## 👨‍💻 Developer
 
 Developed by **Swarna Saha** as part of the Programming Hero Assignment.
