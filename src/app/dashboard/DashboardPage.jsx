@@ -5,9 +5,8 @@ import { useRouter } from "next/navigation";
 import Image from "next/image";
 import { createAuthClient } from "better-auth/react";
 import { 
-  Calendar, Clock, User, Phone, DollarSign, Trash2, 
-  Edit3, ShieldAlert, CheckCircle2, Mail, Camera, 
-  Image as ImageIcon, LayoutDashboard, Briefcase, FileText 
+ Clock, User, Phone, DollarSign, Trash2, 
+  Image as ImageIcon, LayoutDashboard,FileText 
 } from "lucide-react";
 
 const authClient = createAuthClient();
@@ -66,9 +65,6 @@ export default function DashboardPage() {
     setTimeout(() => setToast(null), 3000);
   };
 
-  // ==========================================
-  // 🔥 BOOKING CRUD OPERATIONS
-  // ==========================================
   const openBookingUpdateModal = (booking) => {
     setCurrentBooking(booking);
     setPatientName(booking.patientName || "");
@@ -82,7 +78,7 @@ export default function DashboardPage() {
     setBookingUpdateLoading(true);
 
     try {
-      const response = await fetch(`http://localhost:5000/appointments/${currentBooking._id || currentBooking.id}`, {
+      const response = await fetch(`${process.env.NEXT_PUBLIC_SERVER_URL}/appointments/${currentBooking._id || currentBooking.id}`, {
         method: "PUT",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({ patientName, patientPhone, selectedSlot }),
@@ -107,9 +103,9 @@ export default function DashboardPage() {
     if (!confirm("Are you sure you want to delete this appointment?")) return;
 
     try {
-      const response = await fetch(`http://localhost:5000/appointments/${id}`, { method: "DELETE" });
+      const response = await fetch(`${process.env.NEXT_PUBLIC_SERVER_URL}/appointments/${id}`, { method: "DELETE" });
       if (response.ok) {
-        // সঙ্গে সঙ্গে ইন্টারফেস থেকে রিমুভ (No Reload)
+       
         setBookings(bookings.filter(b => b._id !== id && b.id !== id));
         triggerToast("Appointment deleted successfully!");
       }
@@ -118,9 +114,7 @@ export default function DashboardPage() {
     }
   };
 
-  // ==========================================
-  // 👤 PROFILE UPDATE OPERATIONS
-  // ==========================================
+
   const openProfileModal = () => {
     setProfileName(session?.user?.name || "");
     setProfileImage(session?.user?.image || "");
@@ -140,7 +134,7 @@ export default function DashboardPage() {
       if (!error) {
         triggerToast("Profile updated successfully!");
         setIsProfileModalOpen(false);
-        router.refresh(); // Better-Auth সেশন ক্লায়েন্টে সিঙ্ক করার জন্য
+        router.refresh(); 
       } else {
         alert(error.message);
       }
@@ -162,7 +156,7 @@ export default function DashboardPage() {
   return (
     <div className="w-full bg-[#0d193b] min-h-screen py-10 text-white font-sans relative overflow-hidden">
       
-      {/* 🔔 Glowing Global Toast Notifications */}
+      {/*  Glowing Global Toast Notifications */}
       {toast && (
         <div className="fixed top-5 right-5 z-50 bg-[#0a122c] border border-emerald-500/30 text-emerald-400 px-5 py-3 rounded-xl shadow-2xl flex items-center gap-2 animate-fade-in-down">
           <CheckCircle2 className="w-4 h-4" />
@@ -181,7 +175,7 @@ export default function DashboardPage() {
             <p className="text-slate-400 text-xs mt-1">Manage your centralized health schedules and user settings profile.</p>
           </div>
 
-          {/* 🔘 Tab Toggles (স্ক্রিনশটের মতো ক্লিন ডিজাইন) */}
+       
           <div className="flex bg-[#0a122c] p-1.5 rounded-xl border border-white/5">
             <button
               onClick={() => setActiveTab("bookings")}
@@ -206,9 +200,7 @@ export default function DashboardPage() {
           </div>
         </div>
 
-        {/* ==========================================
-            TAB CONTENT: MY BOOKINGS
-           ========================================== */}
+     
         {activeTab === "bookings" && (
           <div>
             {bookingsLoading ? (
@@ -236,7 +228,7 @@ export default function DashboardPage() {
                         <p className="flex items-center gap-2"><Clock className="w-3.5 h-3.5 text-blue-400" /> {booking.selectedSlot}</p>
                         <p className="flex items-center gap-2"><User className="w-3.5 h-3.5 text-blue-400" /> Patient: <span className="text-slate-200">{booking.patientName}</span></p>
                         <p className="flex items-center gap-2"><Phone className="w-3.5 h-3.5 text-blue-400" /> Contact: <span className="text-slate-200">{booking.patientPhone}</span></p>
-                        {booking.reason && <p className="flex items-center gap-2"><FileText className="w-3.5 h-3.5 text-blue-400" /> Reason: <span className="text-slate-300 italic">"{booking.reason}"</span></p>}
+                        {booking.reason && <p className="flex items-center gap-2"><FileText className="w-3.5 h-3.5 text-blue-400" /> Reason: <span className="text-slate-300 italic">&quot;{booking.reason}&quot;</span></p>}
                         <p className="text-emerald-400 font-bold flex items-center gap-0.5 text-sm pt-1"><DollarSign className="w-4 h-4" /> {booking.fee} BDT</p>
                       </div>
                     </div>
@@ -263,9 +255,7 @@ export default function DashboardPage() {
           </div>
         )}
 
-        {/* ==========================================
-            TAB CONTENT: MY PROFILE
-           ========================================== */}
+       
         {activeTab === "profile" && (
           <div className="max-w-md mx-auto">
             <div className="bg-[#0a122c]/90 rounded-2xl border border-white/5 p-8 shadow-2xl text-center relative backdrop-blur-md">
@@ -280,7 +270,7 @@ export default function DashboardPage() {
     alt="Profile Avatar"
     width={96}
     height={96}
-    unoptimized // 👈 এটি গুগলের সার্ভার থেকে ইমেজটি কোনো বাধা ছাড়াই সরাসরি লোড করতে সাহায্য করবে
+    unoptimized 
     className="object-cover rounded-full w-full h-full aspect-square"
   />
 </div>
@@ -311,10 +301,8 @@ export default function DashboardPage() {
         
 
       </div>
-
-      {/* ==========================================
-          MODAL WINDOW: UPDATE APPOINTMENT
-         ========================================== */}
+  
+       {/* Update */}
       {isBookingModalOpen && (
         <div className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-black/70 backdrop-blur-sm">
           <div className="bg-[#0a122c] w-full max-w-md rounded-2xl border border-white/10 p-6 space-y-4 text-white">
@@ -362,9 +350,9 @@ export default function DashboardPage() {
         </div>
       )}
 
-      {/* ==========================================
+      {/* 
           MODAL WINDOW: UPDATE USER PROFILE
-         ========================================== */}
+         */}
       {isProfileModalOpen && (
         <div className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-black/70 backdrop-blur-sm">
           <div className="bg-[#0a122c] w-full max-w-md rounded-2xl border border-white/10 p-6 space-y-4 text-white">

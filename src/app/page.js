@@ -13,7 +13,7 @@ export default function Home() {
       <WhyChooseUs></WhyChooseUs>
       <StatsSection></StatsSection>
       
-      {/* 2. Other sections layer placeholder */}
+    
       
     </div>
    </div>
